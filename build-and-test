@@ -1,6 +1,1 @@
-jobs:
-  build-and-test:
-    runs-on: macos-latest
-    strategy:
-      matrix:
-        swift-version: ['5.8', '5.9']
+- uses: actions/checkout@v4
