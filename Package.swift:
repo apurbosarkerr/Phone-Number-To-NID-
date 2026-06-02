@@ -3,7 +3,10 @@ import PackageDescription
 
 let package = Package(
     name: "PhoneToNID",
-    platforms: [.macOS(.v13)],
+    platforms: [
+        .macOS(.v13),
+        .iOS(.v14)
+    ],
     products: [
         .executable(name: "PhoneToNID", targets: ["PhoneToNID"]),
         .library(name: "PhoneToNIDKit", targets: ["PhoneToNIDKit"])
