@@ -1,0 +1,4 @@
+cd Phone-Number-To-NID-
+mkdir -p Sources/PhoneToNID
+mkdir -p Sources/PhoneToNIDKit
+mkdir -p Tests
