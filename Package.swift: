@@ -1,0 +1,16 @@
+// swift-tools-version:5.8
+import PackageDescription
+
+let package = Package(
+    name: "PhoneToNID",
+    platforms: [.macOS(.v13)],
+    products: [
+        .executable(name: "PhoneToNID", targets: ["PhoneToNID"]),
+        .library(name: "PhoneToNIDKit", targets: ["PhoneToNIDKit"])
+    ],
+    targets: [
+        .executableTarget(name: "PhoneToNID", dependencies: ["PhoneToNIDKit"], path: "Sources/PhoneToNID"),
+        .target(name: "PhoneToNIDKit", dependencies: [], path: "Sources/PhoneToNIDKit"),
+        .testTarget(name: "PhoneToNIDTests", dependencies: ["PhoneToNIDKit"], path: "Tests")
+    ]
+)
