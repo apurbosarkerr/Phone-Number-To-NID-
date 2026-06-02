@@ -1,0 +1,3 @@
+- uses: swift-actions/setup-swift@v1
+  with:
+    swift-version: ${{ matrix.swift-version }}
