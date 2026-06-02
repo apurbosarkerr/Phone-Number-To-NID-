@@ -1,1 +1,3 @@
-- uses: actions/checkout@v4
+strategy:
+  matrix:
+    swift-version: ['5.8', '5.9']
