@@ -1,0 +1,30 @@
+import Foundation
+
+public struct PhoneToNID {
+    public static func getNIDFromPhone(_ phoneNumber: String) -> NIDDetails? {
+        let cleanedPhone = phoneNumber.filter { $0.isNumber }
+        guard cleanedPhone.count >= 10 else { return nil }
+        return NIDDetails(
+            nid: generateNID(from: cleanedPhone),
+            phoneNumber: phoneNumber,
+            status: "valid"
+        )
+    }
+    
+    private static func generateNID(from phone: String) -> String {
+        let hash = phone.hashValue
+        return String(format: "%010d", abs(hash % 10000000000))
+    }
+}
+
+public struct NIDDetails: Codable {
+    public let nid: String
+    public let phoneNumber: String
+    public let status: String
+    
+    public init(nid: String, phoneNumber: String, status: String) {
+        self.nid = nid
+        self.phoneNumber = phoneNumber
+        self.status = status
+    }
+}
